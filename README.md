@@ -22,13 +22,13 @@ source venv/Scripts/activate
 ```shell
  pip install -r requirements.txt
 ```
-5. Run server 
-```shell 
-python manage.py runserver
-```
-6. Fetch feed news
+5. Fetch feed news
 ```shell 
 python manage.py aggregate
+```
+6. Run server 
+```shell 
+python manage.py runserver
 ```
 7. Go to home Django home page http://127.0.0.1:8000/
 
