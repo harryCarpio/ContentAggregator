@@ -13,6 +13,7 @@
             <span class="block">
                 <p class="text-2xl "> {{ new.title }}</p>
                 Source: <a href="{% url 'news-url-tracking' new.id %}" target="_blank" class="text-green-400">{{ new.link }}</a>
+                Viewed ({{new.clicks_on_source}} Time{{new.clicks_on_source|pluralize:"s"}})
             </span>
             <span class="block">
                 <p>{{ new.content |safe }}</p>
