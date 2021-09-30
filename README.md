@@ -3,8 +3,7 @@ A Content Aggregation Website is a place where people can go to see all latest n
 A content aggregator fetches information from various places online and gathers all of that information in one place. Therefore, you don’t have to visit multiple sites to get the latest info.
 
 
-
-# Installation
+# Setting up
 1. Clone repository 
 ```shell 
  git clone https://github.com/harryCarpio/ContentAggregator
