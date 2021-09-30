@@ -16,8 +16,8 @@ cd ContentAggregator
 3. Create a virtual environment and activate
 ```shell 
 pip install virtualenv
-virtualenv envname
-envname\scripts\activate
+virtualenv venv
+source venv\Scripts\activate
 ```
 4. Install requeriments 
 ```shell
@@ -31,6 +31,7 @@ python manage.py runserver
 ```shell 
 python manage.py aggregate
 ```
+7. Go to home Django home page http://127.0.0.1:8000/
 
 
 # Features

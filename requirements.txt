@@ -3,3 +3,4 @@ Django~=3.2.7
 requests~=2.26.0
 bs4~=0.0.1
 beautifulsoup4~=4.10.0
+requests-html~=0.10.0
