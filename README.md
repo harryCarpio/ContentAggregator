@@ -16,7 +16,7 @@ cd ContentAggregator
 ```shell 
 pip install virtualenv
 virtualenv venv
-source venv\Scripts\activate
+source venv/Scripts/activate
 ```
 4. Install requeriments 
 ```shell
