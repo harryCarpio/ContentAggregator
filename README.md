@@ -1,0 +1,45 @@
+# ContentAggregator
+A Content Aggregation Website is a place where people can go to see all latest news and contents from different places.
+A content aggregator fetches information from various places online and gathers all of that information in one place. Therefore, you don’t have to visit multiple sites to get the latest info.
+
+
+
+# Installation
+1. Clone repository 
+```shell 
+ git clone https://github.com/harryCarpio/ContentAggregator
+```
+2. Move into project
+```shell 
+cd ContentAggregator
+```
+3. Create a virtual environment and activate
+```shell 
+pip install virtualenv
+virtualenv envname
+envname\scripts\activate
+```
+4. Install requeriments 
+```shell
+ pip install -r requirements.txt
+```
+5. Run server 
+```shell 
+python manage.py runserver
+```
+6. Fetch feed news
+```shell 
+python manage.py aggregate
+```
+
+
+# Features
+* Fetch feed news from three sources
+  * Mashable
+  * The verge
+  * TechCrunch
+* Shows list of feed news on Django home page
+  
+# Tech Stack
+* Django
+* Sqlite
