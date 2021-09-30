@@ -34,12 +34,14 @@ def get_feed(website):
 
     with response as r:
         raw_html = r.text
-        soup = BeautifulSoup(raw_html, 'html.parser')
+        soup = BeautifulSoup(raw_html, 'xml')
         items = soup.find_all(website.rss_item_node)
         for item in items:
             title = item.find(website.news_title_field).text
             # pub_date = item.find(website.news_published_field, first=True).text
             link = item.find(website.news_link_field).text
+            if not link:
+                link = item.find(website.news_link_field, href=True)["href"]
             content = item.find(website.news_content_field).text
             guid = item.find(website.news_guid_field).text
             author = ''  # item.find(website.news_author_field, first=True).text
@@ -52,15 +54,14 @@ def get_feed(website):
             news.content = content
             news.guid = guid
             news.author = author
-
             insert_news(news)
 
 
 def insert_news(news):
     if News.objects.filter(guid=news.guid).exists():
         update_news = News.objects.get(guid=news.guid)
-        update_news = news
-        update_news.save()
+        #update_news = news
+        #update_news.save()
     else:
         insert_news = news
         insert_news.save()

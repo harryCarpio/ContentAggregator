@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Content Aggregator</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="">
+    <h1 class="text-4xl p-3">News feed</h1>
+    {% for new in news %}
+        <div class="space-y-4 m-6 p-3 border border-blue-400 rounded-sm">
+            <span class="block">
+                <p class="text-2xl "> {{ new.title }}</p>
+                Source: <a href="{% url 'news-url-tracking' new.id %}" target="_blank" class="text-green-400">{{ new.link }}</a>
+            </span>
+            <span class="block">
+                <p>{{ new.content |safe }}</p>
+            </span>
+        </div>
+    {% endfor %}
+</body>
+</html>

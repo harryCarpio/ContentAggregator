@@ -31,8 +31,17 @@ class News(models.Model):
     aggregated = models.DateTimeField(auto_now_add=True)
     author = models.CharField(max_length=200, null=False, default="")
     guid = models.CharField(max_length=100, null=False, default="")
+    clicks_on_source = models.IntegerField(default=0, null=True, blank=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
 
     def __str__(self) -> str:
         return self.title
+
+    class Meta:
+        ordering = ['-published']
+
+    @property
+    def track_click(self):
+        self.clicks_on_source += 1
+        self.save()
